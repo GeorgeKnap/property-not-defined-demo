@@ -8,6 +8,15 @@ import { BaseComponent } from './base/base.component';
 })
 export class AppComponent extends BaseComponent implements OnInit {
   ngOnInit(): void {
-    this.foo = true;
+    this.foo = true; //should be error
+  }
+}
+
+export class A {}
+
+export class B extends A {
+  constructor() {
+    super();
+    this.foo = true; //here it works
   }
 }
